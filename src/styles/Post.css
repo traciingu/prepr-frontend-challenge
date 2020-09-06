@@ -1,7 +1,14 @@
 .post {
     display: grid;
-    grid-template-columns: 20% 40% 10%;
-    grid-template-rows: 10% 10% 10% 10%;
+    grid-template-columns: 25% 55% 10% 10%;
+    grid-template-rows: 15% 10% 50% 15%;
+    height: 40vh;
+    width: 90%;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 10px;
 }
 
 .post > img {
@@ -22,6 +29,19 @@
 .post-description {
     grid-column: 2/2;
     grid-row: 3/3;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.post > input {
+    width: 90%;
+}
+
+.postLike {
+    grid-column: 3/3;
+    grid-row: 1/1;
+}
+
+.postShare {
+    grid-column: 4/4;
+    grid-row: 1/1;
 }
