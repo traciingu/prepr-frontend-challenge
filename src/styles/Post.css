@@ -1,0 +1,27 @@
+.post {
+    display: grid;
+    grid-template-columns: 20% 40% 10%;
+    grid-template-rows: 10% 10% 10% 10%;
+}
+
+.post > img {
+    grid-column: 1/1;
+    grid-row: 1/-1;
+}
+
+.post-title {
+    grid-column: 2/2;
+    grid-row: 1/1;
+}
+
+.post-type {
+    grid-column: 2/2;
+    grid-row: 2/2;
+}
+
+.post-description {
+    grid-column: 2/2;
+    grid-row: 3/3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

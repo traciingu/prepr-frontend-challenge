@@ -3,7 +3,7 @@ import websiteLogo from "./images/website-logo.png";
 import "./styles/Navbar.css";
 
 
-const Navbar = () => {
+function Navbar () {
     return (
         <div className="navbar">
             <img src={websiteLogo} style={{width: "200px", height: "45px"}}/>
@@ -12,6 +12,6 @@ const Navbar = () => {
         </div>
     );
 
-};
+}
 
 export default Navbar;
