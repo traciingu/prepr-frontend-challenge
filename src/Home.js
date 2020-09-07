@@ -10,7 +10,7 @@ const Home = () => {
         <div>
             <Navbar/>
             <div className="postings">
-            {postData.map((post, index) => (<Post postData={post} key={index}/>))}
+            {postData.map((post, index) => (<Post currentPost={post} key={index}/>))}
             </div>
         </div>
     );

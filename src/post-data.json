@@ -1,5 +1,6 @@
 [
     {
+        "id": "0",
         "postType": "challenge",
         "title": "Web Developer Challenge",
         "image": "https://imgur.com/HlzMCZx.png",
@@ -10,6 +11,7 @@
         }
     },
     {
+        "id": "1",
         "postType": "challenge",
         "title": "Digital Marketer Challenge",
         "image": "https://imgur.com/7oWVQen.png",
@@ -19,6 +21,7 @@
         }
     },
     {
+        "id": "2",
         "postType": "challenge",
         "title": "Fullstack Developer Challenge",
         "image": "https://imgur.com/wGJZfBy.png",
@@ -28,6 +31,7 @@
         }
     },
     {
+        "id": "3",
         "postType": "challenge",
         "title": "UX Designer Challenge",
         "image": "https://imgur.com/GbnikoY.png",
@@ -37,6 +41,7 @@
         }
     },
     {
+        "id": "4",
         "postType": "challenge",
         "title": "Machine Learning Engineer Challenge",
         "image": "https://imgur.com/nEHdmxO.png",

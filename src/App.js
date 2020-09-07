@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch} from "react-router-dom";
 import Home from "./Home";
-import ChallengePage from './Challenge-Page';
+import PostDetails from "./PostDetails";
 import "./styles/App.css";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter basename={"/prepr-frontend-challenge"}>
       <Switch>
         <Route exact path={"/"} component={Home} />
-        <Route exact path={"/challenge-page"} component={ChallengePage}/>
+        <Route exact path={"/post-details/:postType/:id"} component={PostDetails}/>
       </Switch>
     </BrowserRouter>
     </div>

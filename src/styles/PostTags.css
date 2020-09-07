@@ -1,0 +1,8 @@
+.post-tag {
+    display: inline-block;
+    border-radius: 20px;
+    border: 1px solid black;
+    max-width: fit-content;
+    padding: 0px 5px;
+}
+

@@ -1,36 +1,44 @@
 import React, { useState, useEffect } from "react";
-import {Link} from "react-router-dom";
-import axios from "axios";
-import {capitalizeFirstLetter} from "./Helpers";
+import { Link } from "react-router-dom";
+import { capitalizeFirstLetter } from "./Helpers";
 import "./styles/Post.css";
+import PostTags from "./PostTags";
 
-const Post = ({ postData }) => {
+const Post = ({ currentPost }) => {
 
-    const [image, setImage] = useState("");
     const [like, setLike] = useState(false);
+    const tags = [];
 
-    const getRandomImage = async () => {
-        const response = await axios.get("http://www.splashbase.co/api/v1/images/random");
-
-        setImage(response.data.url);
-        
-    };
-
-    
     useEffect(() => {
-        getRandomImage();
+        for (var i = 0; i < Object.keys(currentPost.tags).length; i++) {
+            tags.push(<PostTags postTag={currentPost.tags[i]}/>);
+        }
     }, []);
 
+    /*
+    IMAGE
+    TITLE
+    POST TYPE
+    TAGS
+    DESCRIPTTION
+    BUTTONS
+     */
 
+     
     return (
-        <div className={`post ${postData.postType}`}>
-            <img src={postData.image} style={{width: "90%"}}/>
-            <Link to="/challenge-page"><h2 className="title post-title">{postData.title}</h2></Link>
-            <p className="post-type">{capitalizeFirstLetter(postData.postType)}</p>
-            <p className="description post-description">{postData.description}</p>
+        <div className={`post ${currentPost.postType}`}>
+            <div className="postImgWrapper"><img src={currentPost.image} style={{ width: "90%" }} /></div>
+            <Link to={`/post-details/${currentPost.postType}/${currentPost.id}`}>
+                <h2 className="title post-title">{currentPost.title}</h2>
+            </Link>
+
+            <p className="post-type">{capitalizeFirstLetter(currentPost.postType)}</p>
+            {tags.map((tag, index) => <PostTags postTag={tag} key={index}/>)}
+            <p className="description post-description">{currentPost.description}</p>
+
             <input type="button" value={like ? "Unlike" : "Like"} onClick={() => setLike(prevLike => !prevLike)}
-            className="postLike"/>
-            <input type="button" value="Share" className="postShare"/>
+                className="postLike" />
+            <input type="button" value="Share" className="postShare" />
         </div>
     );
 };
